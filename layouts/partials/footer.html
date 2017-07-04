@@ -1,7 +1,44 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 footer-sidebar">
+	  
+	  <section class="search">
+	<h4>Search the site</h4>
+	<form action="/search" method="get">
+		<input type="search" name="query" value="" placeholder="Search" />
+		<input type="submit" class="button" value="Go" />
+	</form>
+	
+	<p>Browse the archives by date:<br />
+	<a href="/archives#2015">2015</a>,
+	<a href="/archives#2014">2014</a>, 
+	<a href="/archives#2013">2013</a>, <a href="/archives#2012">2012</a>, <a href="/archives#2011">2011</a>, <a href="/archives#2010">2010</a>, <a href="/archives#2009">2009</a>, <a href="/archives#2008">2008</a>, <a href="/archives#2007">2007</a>, <a href="/archives#2006">2006</a>, <a href="/archives#2005">2005</a>, <a href="/archives#2004">2004</a>, <a href="/archives#2003">2003</a></p>
+</section>
+
+<section class="elsewhere">
+	<h4>Links</h4>
+	
+	<p>xxx<a href="http://monotype.com">xxx</a>. yyy <a href="#">yyy</a> and zzz . You can follow me on <a href="#">Twitter</a>, if you like.</p>
+</section>
+
+<section class="ad">
+	<h4>Thanks to</h4>
+	<div id="google_ad">
+		<a href="#">Powered by xxx</a>
+	</div>
+</section>
+
+<section class="book">
+	<h4>books!</h4>
+	<div id="book">
+		<a href="http://www.fivesimplesteps.com/products/a-practical-guide-to-designing-for-the-web"><img src="http://www.markboulton.co.uk/_themes/markboulton-new/img/dftw_thumb.png" /></a>
+		<p><a href="http://www.fivesimplesteps.com/products/a-practical-guide-to-designing-for-the-web">A Practical Guide to Designing for the Web</a> Design your website using the principles of graphic design.</p>
+	</div>
+</section>
+
+    </div>
+	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
         <ul class="list-inline text-center footer-links">
           {{ range .Site.Data.beautifulhugo.social.social_icons }}
             {{- if isset $.Site.Author .id }}
