@@ -42,8 +42,8 @@ blockquote p:first-child {
 }
 hr.small {
   max-width: 100px;
-  margin: 15px auto;
-  border-width: 4px;
+  margin: 10px auto;
+  border-width: 1px;
   border-color: inherit;
   border-radius: 3px;
 }
@@ -296,12 +296,19 @@ footer .theme-by {
 
 .post-preview {
   padding: 20px 0;
+
+}
+
+.posts-list .post-preview {
   border-bottom: 1px dashed #ccc;
 }
 
 @media only screen and (min-width: 768px) {
-  .post-preview {
+.posts-list .post-preview {
     padding: 50px 0 10px 0;
+  }
+.post-preview {
+    padding: 50px 0 0 0;
   }
 }
 
@@ -330,11 +337,10 @@ footer .theme-by {
 .post-preview .post-subtitle {
   margin: 0;
   font-weight: 100;
-  font-size: 18px;
-  font-style: italic;
+  font-size: 16px;
   text-align: center;
   color: #60594c;
-  margin-bottom: 10px;
+  margin: 20px 0 40px 0;
 }
 .post-preview .post-meta,
 .post-heading .post-meta {
@@ -461,7 +467,7 @@ footer .theme-by {
 .intro-header .page-heading {
   text-align: center;
   border-top: 12px solid #262522;
-  border-bottom: 2px solid #d3d2cc;
+  border-bottom: 2px solid #dddccc;
 }
 .intro-header.big-img .page-heading,
 .intro-header.big-img .post-heading {
@@ -470,7 +476,7 @@ footer .theme-by {
   text-shadow: 1px 1px 3px #000;
 }
 .intro-header .page-heading h1 {
-  margin: 20px 0 20px 0;
+  margin: 20px 0 10px 0;
   font-size: 50px;
 }
 .intro-header .post-heading h1 {
@@ -479,12 +485,13 @@ footer .theme-by {
 }
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
-  font-size: 27px;
+  font-size: 20px;
   line-height: 1.1;
   display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 10px 0 0;
+  font-weight: 200;
+  color: #92918c;
+  margin: 10px 0 20px 0;
 }
 .intro-header .post-heading .post-subheading {
   margin-bottom: 20px;

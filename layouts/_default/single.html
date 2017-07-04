@@ -2,6 +2,19 @@
 <div class="container" role="main">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    	<article class="post-preview">
+    	  <h2 class="post-title">{{ .Title }}</h2>
+    	  <h3 class="post-subtitle">
+    	    {{ if .Params.subtitle }}{{ .Params.subtitle }}&nbsp;|&nbsp;{{ end }}
+    	    {{ dateFormat "January 2, 2006" .Date }}
+    	    {{ if .Params.tags }}
+    	          &nbsp;|&nbsp;
+                {{ range .Params.tags }}
+                  <a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+                {{ end }}
+          {{ end }}
+    	  </h3>
+    	</article>
       <article role="main" class="blog-post">
         {{ .Content }}
       </article>
