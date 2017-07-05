@@ -25,7 +25,13 @@
 # Footer
 - id: poweredBy # Accepts HTML
   translation: '由 <a href="http://gohugo.io">Hugo v{{ .Hugo.Version }}</a> 强力驱动 &nbsp;&bull;&nbsp; 主题 <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> 移植自 <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>'
-
+- id: searchSite
+  translation: "搜索本站"
+- id: byCatergory
+  translation: "分类阅读"
+- id: aboutAuthor
+  translation: "关于作者"
+  
 # Navigation
 - id: toggleNavigation
   translation: "切换导航"

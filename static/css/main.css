@@ -201,10 +201,18 @@ footer {
   border-top: 0px #EAEAEA solid;
   margin-top: auto;
   font-size: 14px;
+  color: #827f7a;
 }
 
 footer a {
-  color: #404040;
+  color: #000;
+  border-bottom: 1px solid #000;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #000;
+  border-bottom: 0px solid #000;
+  text-decoration: none;
 }
 
 footer .list-inline {
@@ -250,14 +258,23 @@ footer .theme-by {
 }
 
 footer .footer-sidebar {
-    font-family: "Mundo Sans W01",Arial;
     font-size: 13px;
     line-height: 1.6;
-    border-bottom: 21px solid #262522;
+    border-bottom: 21px solid #333;
     border-top: 1px solid #dededc;
     margin-top: 0px;
-    background: #f7f5f2;
-    font-weight: 300;
+    background: #fcfcfc;
+    font-weight: 200;
+}
+
+footer h4 {
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+}
+
+#book img {
+	float:left;
+	margin-right:12px;
 }
 /* --- Post preview --- */
 
@@ -433,7 +450,7 @@ footer .footer-sidebar {
 }
 .intro-header .page-heading {
   text-align: center;
-  border-top: 12px solid #262522;
+  border-top: 12px solid #333;
   border-bottom: 2px solid #dddccc;
   margin-left: -6%;
   margin-right: -6%;

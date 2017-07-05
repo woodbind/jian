@@ -1,26 +1,35 @@
+  {{ if .Site.Author.gravatarEmail }}
+    {{ .Scratch.Set "gravatarEmail" .Site.Author.gravatarEmail }}
+  {{ end }}
+  {{ if .Site.Author.gravataremail }}
+    {{ .Scratch.Set "gravatarEmail" .Site.Author.gravataremail }}
+  {{ end }}
+  {{ if .Scratch.Get "gravatarEmail" }}
+    {{ .Scratch.Set "authorPicture" (printf "//www.gravatar.com/avatar/%s" (urlize (md5 (.Scratch.Get "gravatarEmail")))) }}
+  {{ else if .Site.Author.picture }}
+    {{ .Scratch.Set "authorPicture" (absURL .Site.Author.picture) }}
+  {{ end }}
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 footer-sidebar">
-	  
-	  <section class="search">
-	<h4>Search the site</h4>
-	<form action="/search" method="get">
-		<input type="search" name="query" value="" placeholder="Search" />
-		<input type="submit" class="button" value="Go" />
-	</form>
+	      <section class="search">
+	        <h4>{{ i18n "searchSite" }}</h4>
+	        <form action="/search" method="get">
+		        <input type="search" name="query" value="" placeholder="Search" />
+		        <input type="submit" class="button" value="Go" />
+	        </form>
 	
 	<p>Browse the archives by date:<br />
 	<a href="/archives#2015">2015</a>,
 	<a href="/archives#2014">2014</a>, 
 	<a href="/archives#2013">2013</a>, <a href="/archives#2012">2012</a>, <a href="/archives#2011">2011</a>, <a href="/archives#2010">2010</a>, <a href="/archives#2009">2009</a>, <a href="/archives#2008">2008</a>, <a href="/archives#2007">2007</a>, <a href="/archives#2006">2006</a>, <a href="/archives#2005">2005</a>, <a href="/archives#2004">2004</a>, <a href="/archives#2003">2003</a></p>
-</section>
+      </section>
 
-<section class="elsewhere">
-	<h4>Links</h4>
-	
-	<p>xxx<a href="http://monotype.com">xxx</a>. yyy <a href="#">yyy</a> and zzz . You can follow me on <a href="#">Twitter</a>, if you like.</p>
-</section>
+        <section class="elsewhere">
+	        <h4>{{ i18n "byCatergory" }}</h4>
+          <p>xxx<a href="http://monotype.com">xxx</a>. yyy <a href="#">yyy</a> and zzz . You can follow me on <a href="#">Twitter</a>, if you like.</p>
+        </section>
 
 <section class="ad">
 	<h4>Thanks to</h4>
@@ -30,8 +39,11 @@
 </section>
 
 <section class="book">
-	<h4>books!</h4>
+	<h4>{{ i18n "aboutAuthor" }}</h4>
 	<div id="book">
+		    {{ with ($.Scratch.Get "authorPicture") }}
+      <img id="about-card-picture" src="{{ . }}{{ if in . "//www.gravatar.com/avatar/" }}?s=110{{ end }}" alt="{{ i18n "global.author_picture" }}" />
+{{ end }}
 		<a href="http://www.fivesimplesteps.com/products/a-practical-guide-to-designing-for-the-web"><img src="http://www.markboulton.co.uk/_themes/markboulton-new/img/dftw_thumb.png" /></a>
 		<p><a href="http://www.fivesimplesteps.com/products/a-practical-guide-to-designing-for-the-web">A Practical Guide to Designing for the Web</a> Design your website using the principles of graphic design.</p>
 	</div>
@@ -68,11 +80,13 @@
           &nbsp;&bull;&nbsp;
           {{ .Site.LastChange.Format "2006" }}
 
+{{ i18n "readMore" }}
           {{ if .Site.Title }}
             &nbsp;&bull;&nbsp;
             <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
           {{ end }}
         </p>
+        {{ i18n "poweredBy" }}
       </div>
     </div>
   </div>
